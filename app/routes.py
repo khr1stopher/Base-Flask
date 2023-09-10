@@ -1,6 +1,12 @@
-from app import app
+from flask import Blueprint
 
-@app.route('/')
-@app.route('/index')
+routes = Blueprint('routes', __name__)
+
+@routes.route('/')
+@routes.route('/index')
 def index():
     return "Hello, World!"
+
+@routes.route('/bye')
+def bye():
+    return "bye, World!"
